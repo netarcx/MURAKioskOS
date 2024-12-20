@@ -10,7 +10,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   python3-pip \
   unclutter \
   xdotool
-RUN pip install -U git+https://github.com/fate0/pychrome.git
+RUN pip install -U git+https://github.com/fate0/pychrome.git --break-system-packages
 
 COPY src/modules/minimalkioskos/filesystem/home/pi/scripts/* /
 COPY src/modules/minimalkioskos/filesystem/home/pi/scripts/startup.sh /startapp.sh

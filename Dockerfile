@@ -3,7 +3,7 @@ LABEL maintainer="Trent 2129"
 
 ENV RUNNING_IN_DOCKER=1
 
-ENV APP_NAME="MURAFMSKioskOS"
+ENV APP_NAME="MURAFMSKioskOS-flatpak"
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   sudo \
@@ -11,11 +11,10 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   unclutter \
   xdotool \
   nano \
-  curl
+  curl \
+  flatpak
 
-RUN curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
-RUN rm google-chrome-stable_current_amd64.deb 
+RUN ​flatpak install flathub com.google.Chrome
 
 RUN pip3 install pychrome --break-system-packages
 

@@ -7,8 +7,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Clear Chromium config and cache, they tend to corrupt themselves, causing Chromium to segfault
 if [ -z "$RUNNING_IN_DOCKER" ]; then
-    rm -rf "$HOME/.config/chromium"
-    rm -rf "$HOME/.cache/chromium"
+    rm -rf "$HOME/.config/chrome"
+    rm -rf "$HOME/.cache/chrome"
 fi
 
 # Autohide mouse when inactive
@@ -32,15 +32,15 @@ else
     python3 "$DIR/chromium_controller.py" "$(head -n 1 /boot/mutesound.txt)" &
 fi
 
-BROWSER="$(command -v chromium-browser)"
+BROWSER="$(command -v google-chrome)"
 [ -z "$BROWSER" ] && BROWSER="$(command -v chromium)"
 
 
 # Start Chromium
 if [ -n "$RUNNING_IN_DOCKER" ]; then
-    $BROWSER --kiosk --touch-events=enabled --disable-pinch --noerrdialogs --disable-session-crashed-bubble --start-fullscreen --remote-debugging-port=9222 --app="file:///config/placeholder.html"
+    $BROWSER --no-sandbox --kiosk --touch-events=enabled --disable-pinch --noerrdialogs --disable-session-crashed-bubble --start-fullscreen --remote-debugging-port=9222 --app="file:///config/placeholder.html"
 else
     while true; do
-        $BROWSER --kiosk --touch-events=enabled --disable-pinch --noerrdialogs --disable-session-crashed-bubble --start-fullscreen --remote-debugging-port=9222 --app="file:///boot/placeholder.html"
+        $BROWSER --no-sandbox --kiosk --touch-events=enabled --disable-pinch --noerrdialogs --disable-session-crashed-bubble --start-fullscreen --remote-debugging-port=9222 --app="file:///boot/placeholder.html"
     done
 fi

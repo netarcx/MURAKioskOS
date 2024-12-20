@@ -10,7 +10,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   python3-pip \
   unclutter \
   xdotool
-RUN pip3 install pychrome
+RUN apt-get install python3-pychrome
 
 COPY src/modules/minimalkioskos/filesystem/home/pi/scripts/* /
 COPY src/modules/minimalkioskos/filesystem/home/pi/scripts/startup.sh /startapp.sh

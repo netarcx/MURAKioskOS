@@ -14,6 +14,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   curl \
   flatpak
 
+RUN apt-get clean
+
 RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 RUN flatpak install -y flathub com.google.Chrome

@@ -6,7 +6,7 @@ ENV RUNNING_IN_DOCKER=1
 ENV APP_NAME="MURAFMSKioskOS"
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-  chromium \
+  sudo \
   python3-pip \
   unclutter \
   xdotool \

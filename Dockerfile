@@ -1,11 +1,11 @@
-FROM ubuntu:latest
+FROM alpine:latest
 LABEL maintainer="Trent 2129"
 
 ENV RUNNING_IN_DOCKER=1
 
-ENV APP_NAME="MURAFMSKioskOS-flatpak"
+ENV APP_NAME="MURAFMSKioskOS-alpine"
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apk update && apk add \
   sudo \
   python3-pip \
   unclutter \

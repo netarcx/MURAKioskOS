@@ -1,4 +1,4 @@
-FROM jlesage/baseimage-gui:debian-9
+FROM ubuntu:latest
 LABEL maintainer="Trent 2129"
 
 ENV RUNNING_IN_DOCKER=1

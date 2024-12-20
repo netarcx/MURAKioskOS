@@ -12,10 +12,10 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   xdotool \
   nano \
   curl \
-  
+
 RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-RUN ​flatpak install flathub com.google.Chrome
+RUN flatpak install flathub com.google.Chrome
 
 RUN pip3 install pychrome --break-system-packages
 

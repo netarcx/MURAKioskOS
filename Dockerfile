@@ -10,7 +10,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   python3-pip \
   unclutter \
   xdotool \
-  nano
+  nano \
+  curl
 
 RUN curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN apt-get install -y ./google-chrome-stable_current_amd64.deb

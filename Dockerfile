@@ -12,6 +12,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   xdotool
 RUN pip3 install pychrome --break-system-packages
 
+RUN snap install chromium
+
 COPY src/modules/minimalkioskos/filesystem/home/pi/scripts/* /
 COPY src/modules/minimalkioskos/filesystem/home/pi/scripts/startup.sh /startapp.sh
 

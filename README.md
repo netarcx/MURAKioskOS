@@ -1,15 +1,8 @@
-# minimalKioskOS
+# MURAFMS Kiosk Display
 [![Build Status](https://travis-ci.org/TheLastProject/minimalKioskOS.svg?branch=master)](https://travis-ci.org/TheLastProject/minimalKioskOS)
 
-minimalKioskOS is a small [CustomPiOS](https://github.com/guysoft/CustomPiOS) system modelled after [FullPageOS](https://github.com/guysoft/FullPageOS).
-
-minimalKioskOS starts Chromium with the URL(s) defined in /boot/urls.txt and watches the process, ensuring connection retries when network connection issues occur.
 
 A Dockerfile is also available, for running minimalKioskOS outside of a Raspberry Pi.
-
-## Why not use FullPageOS?
-
-minimalKioskOS focuses on security more. By default, it's locked down and not running any unnecessary processes. Just Chromium in Kiosk mode with the page you want. If anything goes wrong, there's no way to login and fix things (the password is randomized on first boot for security). Just power-cycle it.
 
 In comparison, FullPageOS runs Lighttpd, keeps the default pi:raspberry username:password combination, has SSH and X11VNC set up.
 

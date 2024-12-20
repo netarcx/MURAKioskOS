@@ -1,9 +1,9 @@
 FROM jlesage/baseimage-gui:debian-9
 LABEL maintainer="Trent 2129"
 
-ENV RUNNING_IN_DOCKER 1
+ENV RUNNING_IN_DOCKER=1
 
-ENV APP_NAME "MURAFMSKioskOS"
+ENV APP_NAME="MURAFMSKioskOS"
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   chromium \

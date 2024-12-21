@@ -18,7 +18,7 @@ RUN apt-get clean
 
 RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-RUN flatpak install -y flathub com.google.Chrome
+RUN flatpak install -y flathub io.github.ungoogled_software.ungoogled_chromium
 
 RUN pip3 install pychrome --break-system-packages
 
